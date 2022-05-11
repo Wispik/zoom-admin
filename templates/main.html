@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="main-page">
+    <header class="header">
+        <div class="container header__body">
+            <a href="/" class="header__logo">
+                <img src="{{ url_for('static', path='/logo.svg') }}" alt="Логотип">
+            </a>
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a class="active-link" href="/">Список проектов</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/prof">Профессии</a>
+                </li>
+                <li class="header__menu-item link-logout">
+                    <a href="/">Выйти</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="app" id="mainApp">
+        <div class="main-title">
+            <label class="label-cb">
+                <input type="checkbox" v-model="cbSelectAll">
+                <span>Выбрать всё</span>
+            </label>
+            <div class="main-title__buttons">
+                <button class="button button-outline">Запустить парсинг</button>
+                <button class="button">
+                    <img src="{{ url_for('static', path='/add.svg') }}">
+                    Добавить проект
+                </button>
+            </div>
+        </div>
+        <table class="table">
+            <tbody class="tbody">
+                <tr class="tr-head">
+                    <td class="td-head"></td>
+                    <td class="td-head">Название фильма</td>
+                    <td class="td-head">Год фильма</td>
+                    <td class="td-head">Начало титров</td>
+                    <td class="td-head">Статус</td>
+                    <td class="td-head">Действие</td>
+                </tr>
+                <tr class="tr">
+                    <td class="td"></td>
+                    <td class="td"></td>
+                    <td class="td"></td>
+                    <td class="td"></td>
+                    <td class="td"></td>
+                    <td class="td"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', path='/main.js') }}"></script>
+</div>
+{% endblock %}

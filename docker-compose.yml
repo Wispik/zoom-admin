@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  zoom-admin:
+    container_name: 'zoom-admin'
+    build:
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:8000 -k uvicorn.workers.UvicornWorker main:app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+  # zoom-nginx:
+  #   container_name: zoom-nginx
+  #   build:
+  #     dockerfile: DockerfileNginx
+  #   restart: always
+  #   ports:
+  #     - "80:80"

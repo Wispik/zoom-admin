@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="login-page">
+    <form class="form-login" method="get" action="/">
+        <h1 class="form-login__title">Авторизация</h2>
+        <label class="label">
+            <span>Почта</span>
+            <input class="input" type="email" placeholder="Введите почту" required>
+        </label>
+        <label class="label">
+            <span>Пароль</span>
+            <input class="input input-password" type="password" placeholder="Введите пароль" required>
+        </label>
+        <div class="form-login__error">{{ error_text }}</div>
+        <button class="button" type="submit">Войти</button>
+    </form>
+</div>
+{% endblock %}
