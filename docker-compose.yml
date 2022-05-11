@@ -9,10 +9,3 @@ services:
     restart: unless-stopped
     ports:
       - "8000:8000"
-  # zoom-nginx:
-  #   container_name: zoom-nginx
-  #   build:
-  #     dockerfile: DockerfileNginx
-  #   restart: always
-  #   ports:
-  #     - "80:80"
